@@ -15,8 +15,17 @@ var counter = {
   "y" : 0,  "z" : 0
 }
 
-function countLetters(counter, sample_text){
-  // FIX ME
+function countLetters(counter, sample_text) {
+  let text = sample_text.toLowerCase();
+  //console.log(text.slice(1))
+
+  if (text.length === 0) {
+    return counter;
+  }
+  if ([text.slice(0,1)]){
+    counter[text.slice(0,1)]++
+  } 
+  return countLetters(counter, text.slice(1))
 }
 
 $(document).ready(function(){
