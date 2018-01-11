@@ -22,7 +22,7 @@ function countLetters(counter, sample_text) {
   if (text.length === 0) {
     return counter;
   }
-  if ([text.slice(0,1)]){
+  if (counter.hasOwnProperty(text.slice(0,1))){
     counter[text.slice(0,1)]++
   } 
   return countLetters(counter, text.slice(1))
